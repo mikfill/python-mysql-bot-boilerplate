@@ -49,7 +49,7 @@ def create_tables():
     DROP TABLE IF EXISTS `users`;
     CREATE TABLE `users` (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-        user_id INT(10) UNSIGNED NOT NULL,
+        user_id BIGINT UNSIGNED NOT NULL DEFAULT 0,
         first_name VARCHAR(64) NULL DEFAULT '',
         last_name VARCHAR(64) NULL DEFAULT '',
         user_name VARCHAR(64) NOT NULL DEFAULT '',
@@ -97,4 +97,3 @@ def initialize_db():
     create_tables()
     sleep(1)
     fill_sentences_table()
-
